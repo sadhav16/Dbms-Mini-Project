@@ -24,7 +24,7 @@ class MyHomeComponents extends StatelessWidget {
           width: 200,
           child: Padding(
             padding: const EdgeInsets.only(right: 30.0),
-            //child: Text(title,style: const TextStyle(fontSize: 20),),
+            child: Text(title,style: const TextStyle(fontSize: 20),),
             
           ),
           

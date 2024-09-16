@@ -1,3 +1,4 @@
+import 'package:ccnewone/components/my_bottom_nav_bar.dart';
 import 'package:ccnewone/components/my_current_event.dart';
 import 'package:ccnewone/components/my_current_location.dart';
 import 'package:ccnewone/components/my_drawer.dart';
@@ -46,7 +47,9 @@ class _HomePageState extends State<HomePage> {
             ],)
         ),
         ],
-        
+
+        body: const MyBottomNavBar(),
+        /*
         body: ListView(
           children: [
             MyHomeComponents(
@@ -75,7 +78,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
           ),
-          
+        */  
         ),
       );
   }
