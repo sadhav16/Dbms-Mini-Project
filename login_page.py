@@ -3,16 +3,27 @@ import connection
 
 url = connection.MONGODB_URI
 client = MongoClient(url)
-db = client["CampusConnect"]
-collection = db["adminUser"]
+db = client["campusConnect"]
+##collection = db["adminUser"]
 
 def main():    
+    choice = int(input("Enter 1 for admin and 0 for user: "))
     userName = input("Enter you user name :")
     passWord = input("Enter your password :")
 
-    document = collection.find_one({"$and":[{"name":{"$eq":userName}},{"password":passWord}]})
+
+    if choice == 1:
+        collection = db["adminUser"] 
+    else:
+        collection = db["User"]
     
+
+    document = collection.find_one({"$and":[{"name":userName},{"password":passWord}]})
+    print(document)
+
     if document:
         print("Authorised user!!")
     else:
         print("Invalid user")
+
+main()
