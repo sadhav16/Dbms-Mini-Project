@@ -4,7 +4,6 @@
 
 - Event Management System for TKM College of Engineering **Campus Connect**
 
-<h3 align="left">Connect with me:</h3>
 <p align="left">
 </p>
 
