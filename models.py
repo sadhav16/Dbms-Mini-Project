@@ -1,12 +1,6 @@
-from pymongo import MongoClient
-import connection
+from Collections import aduser
 
-url = connection.MONGODB_URI
-client = MongoClient(url)
-db = client["campusConnect"]
-##collection = db["adminUser"]
-
-def main():    
+class adminUser:
     choice = int(input("Enter 1 for admin and 0 for user: "))
     userName = input("Enter you user name :")
     passWord = input("Enter your password :")
@@ -25,5 +19,3 @@ def main():
         print("Authorised user!!")
     else:
         print("Invalid user")
-
-main()
