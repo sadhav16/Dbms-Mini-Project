@@ -1,4 +1,5 @@
 from Collections import aduser
+from connection import db
 
 class adminUser:
     choice = int(input("Enter 1 for admin and 0 for user: "))
