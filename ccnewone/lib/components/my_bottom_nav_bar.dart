@@ -1,10 +1,7 @@
 import 'package:ccnewone/pages/explore_favortites_page.dart';
 import 'package:ccnewone/pages/explore_find_page.dart';
 import 'package:ccnewone/pages/explore_home_page.dart';
-import 'package:ccnewone/pages/home_page.dart';
-import 'package:ccnewone/pages/settings_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class MyBottomNavBar extends StatefulWidget {
@@ -17,12 +14,11 @@ class MyBottomNavBar extends StatefulWidget {
 class _MyBottomNavBarState extends State<MyBottomNavBar> {
   int _selectedindex = 0;
 
-  void _navigateBottomBar(int index){
+  void _navigateBottomBar(int index) {
     setState(() {
       _selectedindex = index;
     });
   }
-
 
   final List<Widget> _pages = [
     const ExploreHomePage(),
@@ -37,7 +33,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
       bottomNavigationBar: Container(
         color: Theme.of(context).colorScheme.surface,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal:  15.0,vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 16),
           child: GNav(
             backgroundColor: Theme.of(context).colorScheme.surface,
             color: Theme.of(context).colorScheme.inversePrimary,
@@ -54,17 +50,15 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
               GButton(
                 icon: Icons.home,
                 text: 'Home',
-              ), 
-          
+              ),
               GButton(
                 icon: Icons.favorite,
                 text: 'Highlights',
-              ), 
-          
+              ),
               GButton(
                 icon: Icons.search,
                 text: 'Find',
-              ), 
+              ),
             ],
           ),
         ),
