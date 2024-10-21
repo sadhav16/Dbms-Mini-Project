@@ -6,11 +6,11 @@ class EventItem extends StatelessWidget {
   final String eventTime;
 
   const EventItem({
-    Key? key,
+    super.key,
     required this.logoPath,
     required this.eventTitle,
     required this.eventTime,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
