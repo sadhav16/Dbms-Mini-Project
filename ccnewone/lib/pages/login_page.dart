@@ -33,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
   ];
 
   // login function
+<<<<<<< HEAD
   void login(String email, String password) {
     // Navigate to home page directly without making an HTTP request
     Navigator.pushReplacement(
@@ -41,6 +42,39 @@ class _LoginPageState extends State<LoginPage> {
         builder: (context) => const HomePage(),
       ),
     );
+=======
+  void login(String email, String password){
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+        )
+    );
+    // var response = await http.post(
+    //   Uri.parse('http://127.0.0.1:8000/api/users/login/'),
+    //   body: {
+    //     'email': email,
+    //     'password': password,
+    //   },
+    // );
+
+    // if (!mounted) return;
+
+    // if (response.statusCode == 200) {
+    //   // Navigate to home page
+    //   Navigator.pushReplacement(
+    //     context,
+    //     MaterialPageRoute(
+    //       builder: (context) => const HomePage(),
+    //     ),
+    //   );
+    // } else {
+    //   // Handle login error
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(content: Text('Login failed. Please try again.')),
+    //   );
+    // }
+>>>>>>> e7d6593dfbd8ea568bb8ad00881570adaac53896
   }
 
   @override

@@ -41,8 +41,8 @@ class _AccountSettingsState extends State<AccountSettings> {
                       ),
                     ],
                   ),
-                  child: Column(
-                    children: const [
+                  child: const Column(
+                    children: [
                       MyProfileOptions(icon: Icons.person, title: 'Personal Info'),
                       Divider(height: 1), // Divider between each option
                       MyProfileOptions(icon: Icons.location_on, title: 'Addresses'),
@@ -65,8 +65,8 @@ class _AccountSettingsState extends State<AccountSettings> {
                       ),
                     ],
                   ),
-                  child: Column(
-                    children: const [
+                  child: const Column(
+                    children: [
                       MyProfileOptions(icon: Icons.question_answer, title: 'FAQs'),
                       Divider(height: 1),
                       MyProfileOptions(icon: Icons.settings, title: 'Settings'),
