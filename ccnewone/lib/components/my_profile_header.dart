@@ -11,7 +11,7 @@ class MyProfileHeader extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 50.0,
-            backgroundColor: Colors.orange.shade200,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             child: const Icon(Icons.person, size: 50.0, color: Colors.white),
           ),
           const SizedBox(height: 10.0),

@@ -18,9 +18,9 @@ class MyCurrentEvent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //event name
-            const Column(
+            Column(
               children: [
-                Text('IEEE GRSS object detection'),
+                Text('IEEE GRSS object detection',style: TextStyle(color: Theme.of(context).colorScheme.secondary)),
               ],
             ),
             
@@ -28,7 +28,7 @@ class MyCurrentEvent extends StatelessWidget {
             //event timing
             Column(
               children: [
-                const Text('APJ HALL'),
+                Text('APJ HALL',style:TextStyle(color: Theme.of(context).colorScheme.secondary)),
                 Text('Starts 4:30 PM',style: TextStyle(color: Theme.of(context).colorScheme.primary),)
               ],
             )

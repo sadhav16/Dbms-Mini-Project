@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                 value: selectedRole,
                 hint: Text("Select Role",
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.inversePrimary)),
+                        color: Theme.of(context).colorScheme.primary)),
                 items: rolesWithDescriptions.map((roleMap) {
                   return DropdownMenuItem<String>(
                     value: roleMap['role'],
@@ -111,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                           roleMap['role']!,
                           style: TextStyle(
                               color:
-                                  Theme.of(context).colorScheme.inversePrimary),
+                                  Theme.of(context).colorScheme.primary),
                         ),
                         Text(
                           roleMap['description']!,

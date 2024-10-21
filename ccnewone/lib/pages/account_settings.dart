@@ -31,7 +31,7 @@ class _AccountSettingsState extends State<AccountSettings> {
                 // First box: Profile and Address
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.secondary,
                     borderRadius: BorderRadius.circular(10.0),
                     boxShadow: [
                       BoxShadow(
@@ -55,7 +55,7 @@ class _AccountSettingsState extends State<AccountSettings> {
                 // Second box: FAQs and Settings
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.secondary,
                     borderRadius: BorderRadius.circular(10.0),
                     boxShadow: [
                       BoxShadow(
@@ -79,7 +79,7 @@ class _AccountSettingsState extends State<AccountSettings> {
                 // "Log Out" in a separate box
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.secondary,
                     borderRadius: BorderRadius.circular(10.0),
                     boxShadow: [
                       BoxShadow(

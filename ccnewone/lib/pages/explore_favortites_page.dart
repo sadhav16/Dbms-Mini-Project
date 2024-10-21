@@ -27,6 +27,29 @@ class ExploreFavoritesPage extends StatelessWidget {
       // Add more items as needed
     ];
 
+
+    return Scaffold(
+  appBar: AppBar(
+    automaticallyImplyLeading: false, // Removes the back button
+    title: const Text('Explore Favorites'),
+  ),
+    body: Container(
+      color: Theme.of(context).colorScheme.surface, // Set your desired background color here
+      child: ListView.builder(
+        itemCount: favoriteItems.length,
+        itemBuilder: (context, index) {
+          final item = favoriteItems[index];
+          return FavoriteCard(
+            imageUrl: item['image']!,
+            title: item['title']!,
+            subtitle: item['subtitle']!,
+          );
+        },
+      ),
+    ),
+  );
+
+    /*
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false, // Removes the back button
@@ -44,5 +67,6 @@ class ExploreFavoritesPage extends StatelessWidget {
         },
       ),
     );
+    */
   }
 }

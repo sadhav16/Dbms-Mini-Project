@@ -15,6 +15,7 @@ class FavoriteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).colorScheme.secondary,
       margin: const EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,9 +35,10 @@ class FavoriteCard extends StatelessWidget {
                 // Title text
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.primary
                   ),
                 ),
                 const SizedBox(height: 5),
