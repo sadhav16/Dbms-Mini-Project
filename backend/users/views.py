@@ -41,6 +41,8 @@ class UserProfileView(APIView):
         serializer = UserSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-class EventViewSet(viewsets.ModelViewSet):
-    queryset = Event.objects.all()
-    serializer_class = EventSerializer
+class EventListView(APIView):
+    def get(self, request):
+        events = Event.objects.all()  # Retrieve all events from the database
+        serializer = EventSerializer(events, many=True)  # Serialize the event queryset
+        return Response(serializer.data, status=status.HTTP_200_OK)

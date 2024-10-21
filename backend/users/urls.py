@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import RegisterView, LoginView, UserProfileView, EventViewSet
+from .views import RegisterView, LoginView, UserProfileView, EventViewSet , EventListView
 
 router = DefaultRouter()
 router.register(r'events', EventViewSet)
@@ -14,4 +14,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api/', include('myapp.urls')),
+    path('api/events/', EventListView.as_view(), name='event-list'),
 ]
+
+

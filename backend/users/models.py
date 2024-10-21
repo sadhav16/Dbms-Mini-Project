@@ -69,12 +69,13 @@ class MyUser(AbstractBaseUser):
         verbose_name = 'User'
         verbose_name_plural = 'Users'
 
-
 class Event(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-    date = models.DateTimeField()
-    location = models.CharField(max_length=200)
+    ename = models.CharField(max_length=100)  # Change title to ename
+    description = models.TextField()  # You may want to add a field for description
+    coord1 = models.CharField(max_length=100, null=True)  # Coordinates field
+    coord2 = models.CharField(max_length=100, null=True)  # Coordinates field
+    location = models.CharField(max_length=200, null=True)  # Change location to loc
 
     class Meta:
-        abstract = False
+        verbose_name = 'Event'
+        verbose_name_plural = 'Events'

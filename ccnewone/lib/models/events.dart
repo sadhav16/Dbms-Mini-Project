@@ -6,7 +6,6 @@ class EventH{
   final String location;
   final String date;
   final String time;
-  final String imagePath;
 
   EventH({
     required this.ename,
@@ -15,10 +14,6 @@ class EventH{
     required this.coord2,
     required this.location,
     required this.date,
-    required this.time,
-    required this.imagePath});
-
+    required this.time,});
     //
-    
-
 }

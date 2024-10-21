@@ -20,7 +20,6 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const LoginOrRegister(),
       theme: Provider.of<ThemeProvider>(context).themeData,
-    );  
-
+    );
   }
 }
