@@ -2,12 +2,12 @@ import 'package:ccnewone/components/my_button.dart';
 import 'package:ccnewone/components/my_textfield.dart';
 import 'package:ccnewone/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
-  
   final void Function()? onTap;
 
-  const LoginPage({super.key, required this.onTap}); 
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -34,18 +34,31 @@ class _LoginPageState extends State<LoginPage> {
   ];
 
   // login function
-  void login() {
-    /*
-    handle the authentication part                                           backend
-    */
-
-    //navigate to home page
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const HomePage(),
-      ),
+  void login(String email, String password) async {
+    var response = await http.post(
+      Uri.parse('http://127.0.0.1:8000/api/users/login/'),
+      body: {
+        'email': email,
+        'password': password,
+      },
     );
+
+    if (!mounted) return;
+
+    if (response.statusCode == 200) {
+      // Navigate to home page
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomePage(),
+        ),
+      );
+    } else {
+      // Handle login error
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Login failed. Please try again.')),
+      );
+    }
   }
 
   @override
@@ -79,7 +92,9 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: DropdownButtonFormField<String>(
                 value: selectedRole,
-                hint: Text("Select Role", style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary)),
+                hint: Text("Select Role",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary)),
                 items: rolesWithDescriptions.map((roleMap) {
                   return DropdownMenuItem<String>(
                     value: roleMap['role'],
@@ -88,7 +103,9 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Text(
                           roleMap['role']!,
-                          style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+                          style: TextStyle(
+                              color:
+                                  Theme.of(context).colorScheme.inversePrimary),
                         ),
                         Text(
                           roleMap['description']!,
@@ -108,7 +125,8 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  fillColor:
+                      Theme.of(context).colorScheme.surfaceContainerHighest,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -117,7 +135,8 @@ class _LoginPageState extends State<LoginPage> {
                   return rolesWithDescriptions.map((roleMap) {
                     return Text(
                       roleMap['role']!,
-                      style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.inversePrimary),
                     );
                   }).toList();
                 },
@@ -146,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
 
             //sign in button
             MyButton(
-              onTap: login,
+              onTap: () => login(emailController.text, pswdController.text),
               text: "Sign In",
             ),
 
@@ -158,7 +177,8 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Text(
                   "Not a Member?",
-                  style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.inversePrimary),
                 ),
                 const SizedBox(width: 4),
                 GestureDetector(
@@ -303,3 +323,4 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 */
+
