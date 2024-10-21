@@ -2,7 +2,6 @@ import 'package:ccnewone/components/my_button.dart';
 import 'package:ccnewone/components/my_textfield.dart';
 import 'package:ccnewone/pages/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -34,31 +33,14 @@ class _LoginPageState extends State<LoginPage> {
   ];
 
   // login function
-  void login(String email, String password) async {
-    var response = await http.post(
-      Uri.parse('http://127.0.0.1:8000/api/users/login/'),
-      body: {
-        'email': email,
-        'password': password,
-      },
+  void login(String email, String password) {
+    // Navigate to home page directly without making an HTTP request
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      ),
     );
-
-    if (!mounted) return;
-
-    if (response.statusCode == 200) {
-      // Navigate to home page
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const HomePage(),
-        ),
-      );
-    } else {
-      // Handle login error
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Login failed. Please try again.')),
-      );
-    }
   }
 
   @override
