@@ -22,7 +22,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
 
   final List<Widget> _pages = [
     const ExploreHomePage(),
-    const ExploreFavoritesPage(),
+    const ExploreFavortitesPage(),
     const ExploreFindPage(),
   ];
 

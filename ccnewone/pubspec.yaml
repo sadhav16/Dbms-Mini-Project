@@ -1,17 +1,16 @@
 name: ccnewone
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.1.0
+version: 0.1.0+1
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: ^3.5.3
 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.2.2
   provider: ^6.1.2
-  http: ^0.13.5
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
