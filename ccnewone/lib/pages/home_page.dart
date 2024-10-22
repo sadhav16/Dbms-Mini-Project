@@ -201,7 +201,7 @@ class _HomePageState extends State<HomePage> {
         ],
         body: Column(
           children: [
-            Expanded(child: const MyBottomNavBar()), // Existing content
+            const Expanded(child: MyBottomNavBar()), // Existing content
 
             // Row containing both buttons
             Padding(
