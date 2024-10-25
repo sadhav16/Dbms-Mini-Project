@@ -10,17 +10,17 @@ class ExploreFavoritesPage extends StatelessWidget {
     final List<Map<String, String>> favoriteItems = [
       {
         'image':
-            'https://via.placeholder.com/400x200', // Image URL or local asset
+            'lib/assets/homeui/eventadd.jpg', // Image URL or local asset
         'title': 'Favorite 1',
         'subtitle': 'This is the first favorite'
       },
       {
-        'image': 'https://via.placeholder.com/400x200',
+        'image': 'lib/assets/homeui/eventdet.jpg',
         'title': 'Favorite 2',
         'subtitle': 'This is the second favorite'
       },
       {
-        'image': 'https://via.placeholder.com/400x200',
+        'image': 'lib/assets/homeui/goto.jpg',
         'title': 'Favorite 3',
         'subtitle': 'This is the third favorite'
       },
