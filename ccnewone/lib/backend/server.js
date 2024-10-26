@@ -9,8 +9,10 @@ const port = 8080; // Your desired port
 app.use(cors());
 app.use(express.json());
 
+//mongodb+srv://yoshuaraju:yoshuaraju@cluster0.vcsxy.mongodb.net/campusConnect?retryWrites=true&w=majority
+//mongodb+srv://yoshuaraju:yoshuaraju@cluster0.vcsxy.mongodb.net/campusConnect?retryWrites=true&w=majority&appName=Cluster0
 // MongoDB connection string (replace with your own)
-const mongoUri = 'mongodb+srv://yoshuaraju:yoshuaraju@cluster0.vcsxy.mongodb.net/campusConnect?retryWrites=true&w=majority';
+const mongoUri = 'mongodb+srv://yoshuaraju:yoshuaraju@cluster0.vcsxy.mongodb.net/campusConnect?retryWrites=true&w=majority&appName=Cluster0';
 
 // Connect to MongoDB
 mongoose.connect(mongoUri)
